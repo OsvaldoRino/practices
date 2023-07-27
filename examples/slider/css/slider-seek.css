@@ -11,7 +11,7 @@
 
 .slider-seek text {
   font-weight: bold;
-  fill: currentcolor;
+  fill: currentColor;
   font-family: sans-serif;
 }
 
@@ -34,19 +34,19 @@
 }
 
 .slider-seek .rail {
-  stroke: currentcolor;
+  stroke: currentColor;
   stroke-width: 2px;
-  fill: currentcolor;
+  fill: currentColor;
   fill-opacity: 25%;
 }
 
 .slider-seek .thumb {
   stroke-width: 0;
-  fill: currentcolor;
+  fill: currentColor;
 }
 
 .slider-seek .focus-ring {
-  stroke: currentcolor;
+  stroke: currentColor;
   stroke-opacity: 0;
   fill-opacity: 0;
   stroke-width: 3px;
