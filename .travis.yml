@@ -1,0 +1,43 @@
+language: node_js
+
+node_js:
+  - "node"
+
+addons:
+  firefox: "60.0.2"
+
+git:
+  depth: 3
+
+stages:
+- Test
+- Deploy
+
+jobs:
+  fast_finish: true
+  allow_failures:
+    - env: ALLOW_FAILURE=true
+
+  include:
+    - stage: Test
+      name: CSS Linting
+      script: npm run lint:css
+    - stage: Test
+      name: JS Linting
+      script: npm run lint:es
+    - stage: Test
+      name: HTML Linting
+      script: npm run vnu-jar
+    - stage: Test
+      name: EditorConfig Linting
+      script: npm run lint:ec
+    - stage: Deploy
+      if: branch = master AND type != pull_request
+      script: skip
+      before_deploy: scripts/travis-before_deploy.sh
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: /tmp/deploy/travis-deploy.sh
+        on:
+          branch: master
