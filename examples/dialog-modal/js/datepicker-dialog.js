@@ -763,7 +763,7 @@ DatePickerDialog.prototype.handleDayKeyDown = function (event) {
 };
 
 DatePickerDialog.prototype.handleDayClick = function (event) {
-  if (!this.isDayDisabled(event.currentTarget) && event.which !== 3) {
+  if (!this.isDayDisabled(event.currentTarget)) {
     this.setTextboxDate(event.currentTarget);
     this.close();
   }
