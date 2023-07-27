@@ -1,0 +1,30 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "rules": {
+    "media-feature-name-no-unknown": [
+      true,
+      {
+        "ignoreMediaFeatureNames": [
+          "forced-colors"
+        ]
+      },
+    ],
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": [
+          "Font Awesome 5 Free"
+        ]
+      },
+    ],
+    "prettier/prettier": [true, {"singleQuote": false}],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "/^-webkit-/"
+        ]
+      },
+    ]
+  }
+}
